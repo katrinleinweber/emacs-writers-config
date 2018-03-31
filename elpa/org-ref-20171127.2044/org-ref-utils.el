@@ -420,7 +420,7 @@ Jabref, Mendeley and Zotero. See `bibtex-completion-find-pdf'."
             (unless (s-blank? doi)
               (if (string-match "^http" doi)
                   (browse-url doi)
-                (browse-url (format "http://dx.doi.org/%s" doi)))
+                (browse-url (format "https://doi.org/%s" doi)))
               (throw 'done nil))))))))
 
 

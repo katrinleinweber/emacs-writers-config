@@ -372,7 +372,7 @@ The settings I use are:
 Occasionally weird things happen with a DOI. The first thing you should check is if the json data for the DOI can be retrieved. You can do that at the command line, or in a sh block like this:
 
 #+BEGIN_SRC sh
-curl -LH "Accept: application/citeproc+json" "http://doi.org/10.1021/jp511426q"
+curl -LH "Accept: application/citeproc+json" "https://doi.org/10.1021/jp511426q"
 #+END_SRC
 
 #+RESULTS:

@@ -151,7 +151,7 @@ ENTRY is selected from `orhc-bibtex-candidates'."
 ENTRY is selected from `orhc-bibtex-candidates'."
   (let ((doi (cdr (assoc "doi" entry))))
     (if doi
-	(browse-url (format "http://dx.doi.org/%s" doi))
+	(browse-url (format "https://doi.org/%s" doi))
       (message "No doi found for %s" (cdr (assoc "=key=" entry))))))
 
 

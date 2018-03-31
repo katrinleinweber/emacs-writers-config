@@ -61,7 +61,7 @@
 ;;
 ;; ## Examples
 ;;
-;; * To insert a clean BibTeX entry for http://doi.org/10.1145/2676726.2677006
+;; * To insert a clean BibTeX entry for https://doi.org/10.1145/2676726.2677006
 ;;   in the current buffer, use
 ;;
 ;;         M-x crossref-lookup RET fiat deductive delaware RET i

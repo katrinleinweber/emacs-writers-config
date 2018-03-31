@@ -1297,7 +1297,7 @@ are returned as a string."
 This function is mainly intended for the DOI and URL fields."
   (let ((str (ebib-db-get-field-value field key db 'noerror 'unbraced 'xref)))
     (if (and str (string-match-p "^[0-9]" str))
-        (setq str (concat "https://dx.doi.org/" str)))
+        (setq str (concat "https://doi.org/" str)))
     (if str
         (propertize "www"
                     'face '(:height 0.8 :inherit link)

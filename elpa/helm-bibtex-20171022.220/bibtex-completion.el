@@ -854,7 +854,7 @@ case no PDF is found."
       (if url
           (browse-url url)
         (if doi (browse-url
-                 (s-concat "http://dx.doi.org/" doi))
+                 (s-concat "https://doi.org/" doi))
           (message "No URL or DOI found for this entry: %s"
                    key))))))
 
@@ -1064,7 +1064,7 @@ guidelines.  Return DEFAULT if FIELD is not present in ENTRY."
          ;; Maintain the punctuation and capitalization that is used by
          ;; the journal in its title.
          ("pages" (s-join "–" (s-split "[^0-9]+" value t)))
-         ("doi" (s-concat " http://dx.doi.org/" value))
+         ("doi" (s-concat " https://doi.org/" value))
          ("year" (or value
                      (car (split-string (bibtex-completion-get-value "date" entry "") "-"))))
          (_ value))

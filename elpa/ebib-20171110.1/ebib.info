@@ -1845,7 +1845,7 @@ See the option "Url Regexp" for details.
 a browser.  The DOI must be stored in the ‘doi’ field.  Unlike URLs,
 there can only be one DOI in this field.  The whole contents of the
 field is assumed to be the DOI and is sent to the browser.  Ebib adds
-the URL ‘http://dx.doi.org/’ before sending the DOI to the browser, so
+the URL ‘https://doi.org/’ before sending the DOI to the browser, so
 the ‘doi’ field should contain just the DOI itself.
 
    Ebib uses the Emacs function ‘browse-url’ to call the default browser

@@ -255,7 +255,7 @@ SOURCE is ignored, but required."
 				    (cdr (assoc "doi" candidate)))
 			    (lambda (x)
 			      (browse-url
-			       (format "http://dx.doi.org/%s"
+			       (format "https://doi.org/%s"
 				       (cdr (assoc "doi" x))))))))))
 
   ;; Notes, open or create.

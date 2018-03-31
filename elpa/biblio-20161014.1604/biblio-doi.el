@@ -35,7 +35,7 @@
 
 (defun biblio-doi--dx-url (doi)
   "Create a doi.org url for DOI."
-  (format "http://doi.org/%s" doi))
+  (format "https://doi.org/%s" doi))
 
 (defun biblio-doi--crosscite-url (doi)
   "Create a crosscite URL to use as a fallback for DOI.

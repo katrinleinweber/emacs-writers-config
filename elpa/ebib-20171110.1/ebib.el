@@ -2207,13 +2207,13 @@ argument ARG."
   "Open the DOI in the standard DOI field in a browser.
 The stardard DOI field (see user option `ebib-doi-field') may
 contain only one DOI.  The DOI is combined with the URL
-\"http://dx.doi.org/\" before being sent to the browser."
+\"https://doi.org/\" before being sent to the browser."
   (interactive)
   (ebib--execute-when
     ((entries)
      (let ((doi (ebib-db-get-field-value ebib-doi-field (ebib--get-key-at-point) ebib--cur-db 'noerror 'unbraced 'xref)))
        (if doi
-           (ebib--call-browser (concat "http://dx.doi.org/" doi))
+           (ebib--call-browser (concat "https://doi.org/" doi))
          (error "[Ebib] No DOI found in `%s' field" ebib-doi-field))))
     ((default)
      (beep))))

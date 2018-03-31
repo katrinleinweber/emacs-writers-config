@@ -110,7 +110,7 @@ Set `doi-utils-make-notes' to nil if you want no notes."
 
 ;;* Getting pdf files from a DOI
 
-;; The idea here is simple. When you visit http://dx.doi.org/doi or
+;; The idea here is simple. When you visit https://doi.org/doi or
 ;; https://doi.org/doi, you get redirected to the journal site. Once you have
 ;; the url for the article, you can usually compute the url to the pdf, or find
 ;; it in the page. Then you simply download it.
@@ -552,7 +552,7 @@ checked."
   (interactive "P")
   (save-excursion
     (bibtex-beginning-of-entry)
-    (let (;; get doi, removing http://dx.doi.org/ if it is there.
+    (let (;; get doi, removing https://doi.org/ if it is there.
           (doi (replace-regexp-in-string
                 "https?://\\(dx.\\)?.doi.org/" ""
                 (bibtex-autokey-get-field "doi")))
@@ -593,7 +593,7 @@ checked."
 
 ;; I
 ;; [[http://homepages.see.leeds.ac.uk/~eeaol/notes/2013/02/doi-metadata/][found]]
-;; you can download metadata about a DOI from http://dx.doi.org. You just have
+;; you can download metadata about a DOI from https://doi.org. You just have
 ;; to construct the right http request to get it. Here is a function that gets
 ;; the metadata as a plist in emacs.
 
@@ -605,7 +605,7 @@ checked."
         (json-data))
     (with-current-buffer
         (url-retrieve-synchronously
-         (concat "http://dx.doi.org/" doi))
+         (concat "https://doi.org/" doi))
       (setq json-data (buffer-substring url-http-end-of-headers (point-max)))
       (if (or (string-match "Resource not found" json-data)
               (string-match "Status *406" json-data))
@@ -1190,7 +1190,7 @@ Argument LINK-STRING Passed in on link click."
 ;;   pages =	 1996,
 ;;   year =	 2014,
 ;;   doi =		 {10.1039/c3ee43874k,
-;;   url =		 {http://dx.doi.org/10.1039/c3ee43874k}},
+;;   url =		 {https://doi.org/10.1039/c3ee43874k}},
 
 ;; }
 

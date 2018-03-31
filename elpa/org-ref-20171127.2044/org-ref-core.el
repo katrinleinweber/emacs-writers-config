@@ -239,7 +239,7 @@ function in `org-ref-completion-library'."
 
 
 (defcustom org-ref-bibliography-entry-format
-  '(("article" . "%a, %t, <i>%j</i>, <b>%v(%n)</b>, %p (%y). <a href=\"%U\">link</a>. <a href=\"http://dx.doi.org/%D\">doi</a>.")
+  '(("article" . "%a, %t, <i>%j</i>, <b>%v(%n)</b>, %p (%y). <a href=\"%U\">link</a>. <a href=\"https://doi.org/%D\">doi</a>.")
 
     ("book" . "%a, %t, %u (%y).")
     ("techreport" . "%a, %t, %i, %u (%y).")
@@ -2460,7 +2460,7 @@ construct the heading by hand."
         (when doi
           (if (string-match "^http" doi)
               (browse-url doi)
-            (browse-url (format "http://dx.doi.org/%s" doi)))
+            (browse-url (format "https://doi.org/%s" doi)))
           (throw 'done nil)))
       (message "No url or doi found"))))
 
