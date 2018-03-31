@@ -524,7 +524,7 @@ directory.  You can also specify a new file."
         (bibtex-search-entry key)
         (setq doi (bibtex-autokey-get-field "doi"))
         ;; in case doi is a url, remove the url part.
-        (replace-regexp-in-string "^http://dx.doi.org/" "" doi)))))
+        (replace-regexp-in-string "^https?://(dx.)?doi.org/" "" doi)))))
 
 
 ;;**** functions that operate on key at point for click menu

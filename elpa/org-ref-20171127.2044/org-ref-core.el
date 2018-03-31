@@ -2866,15 +2866,15 @@ will leave the empty entries so that you may fill them in later."
 
 
 (defun orcb-clean-doi ()
-  "Remove http://dx.doi.org/ in the doi field."
+  "Remove doi.org-URLs in the doi field."
   (let ((doi (bibtex-autokey-get-field "doi")))
-    (when (string-match "^http://dx.doi.org/" doi)
+    (when (string-match "^https?://(dx.)?doi.org/" doi)
       (bibtex-beginning-of-entry)
       (goto-char (car (cdr (bibtex-search-forward-field "doi" t))))
       (bibtex-kill-field)
       (bibtex-make-field "doi")
       (backward-char)
-      (insert (replace-regexp-in-string "^http://dx.doi.org/" "" doi)))))
+      (insert (replace-regexp-in-string "^https?://(dx.)?doi.org/" "" doi)))))
 
 
 (defun orcb-clean-year (&optional new-year)
